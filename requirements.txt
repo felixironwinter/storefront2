@@ -3,6 +3,7 @@ dj-database-url==2.0.0
 Django==4.1.7
 django_debug_toolbar==3.8.1
 djangorestframework==3.14.0
+django-heroku
 gunicorn==20.1.0
 mysqlclient==2.1.1
 psycopg2==2.9.6

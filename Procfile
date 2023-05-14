@@ -1,2 +1,1 @@
-release: python manage.py migrate
-web: gunicorn storefront2.wsgi
+web: gunicorn core.wsgi:application --log-file -
