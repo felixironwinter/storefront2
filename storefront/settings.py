@@ -98,12 +98,20 @@ DATABASES = {
     #     'USER': 'root',
     #     'PASSWORD': 'Tobias25395'
     # },
-    'default':{
+    'pgsql':{
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'storefront',
         'HOST': '127.0.0.1',
         'USER': 'postgres',
         'PASSWORD': 'Mangoes31995!',
+        'PORT': '5432'
+    },
+    'default':{
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dbj6ob6vcm9hjf',
+        'HOST': 'ec2-34-242-154-118.eu-west-1.compute.amazonaws.com',
+        'USER': 'hdeiletiowlwqw',
+        'PASSWORD': 'b7fb77e269d63a80748bf0b88bb135431314e690e3f3d92732d7d442b9dc9da1',
         'PORT': '5432'
     }
 }
