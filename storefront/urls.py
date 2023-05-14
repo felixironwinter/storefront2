@@ -25,4 +25,5 @@ urlpatterns = [
     path('playground/', include('playground.urls')),
     path('store/', include('store.urls')),
     path('__debug__/', include(debug_toolbar.urls)),
+    (r'^favicon\.ico$', 'django.views.generic.simple.redirect_to', {'url': '/static/images/favicon.ico'})
 ]
