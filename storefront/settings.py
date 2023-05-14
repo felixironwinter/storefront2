@@ -91,14 +91,14 @@ WSGI_APPLICATION = 'storefront.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'storefront2',
-        'HOST': 'localhost',
-        'USER': 'root',
-        'PASSWORD': 'Tobias25395'
-    },
-    'pgsql':{
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'storefront2',
+    #     'HOST': 'localhost',
+    #     'USER': 'root',
+    #     'PASSWORD': 'Tobias25395'
+    # },
+    'default':{
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'storefront',
         'HOST': '127.0.0.1',
