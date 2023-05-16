@@ -69,16 +69,16 @@ INTERNAL_IPS = [
     # ...
 ]
 
-if DEBUG is True:
-   INSTALLED_APPS += (
-       'debug_toolbar',
-       )
+# if DEBUG is True:
+#    INSTALLED_APPS += (
+#        'debug_toolbar',
+#        )
 
-if DEBUG is True:
-  class AllIPS(list):
-      def __contains__(self, item):
-           return True
-  INTERNAL_IPS = AllIPS()
+# if DEBUG is True:
+#   class AllIPS(list):
+#       def __contains__(self, item):
+#            return True
+#   INTERNAL_IPS = AllIPS()
 
 
 ROOT_URLCONF = 'storefront.urls'
