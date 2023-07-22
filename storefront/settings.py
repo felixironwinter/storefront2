@@ -14,6 +14,7 @@ from pathlib import Path
 import os 
 import dj_database_url
 import django_heroku
+import psycopg2
 
 #hello there
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -105,34 +106,39 @@ WSGI_APPLICATION = 'storefront.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# 'default': {
+#     'ENGINE': 'django.db.backends.mysql',
+#     'NAME': 'storefront2',
+#     'HOST': 'localhost',
+#     'USER': 'root',
+#     'PASSWORD': 'Tobias25395'
+# },
+
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'storefront2',
-    #     'HOST': 'localhost',
-    #     'USER': 'root',
-    #     'PASSWORD': 'Tobias25395'
-    # },
-    'pgsql':{
+    'default':{
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'storefront',
         'HOST': '127.0.0.1',
         'USER': 'postgres',
         'PASSWORD': 'Mangoes31995!',
         'PORT': '5432'
-    },
-    'default':{
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dbj6ob6vcm9hjf',
-        'HOST': 'ec2-34-242-154-118.eu-west-1.compute.amazonaws.com',
-        'USER': 'hdeiletiowlwqw',
-        'PASSWORD': 'b7fb77e269d63a80748bf0b88bb135431314e690e3f3d92732d7d442b9dc9da1',
-        'PORT': '5432'
     }
+
 }
 
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+
+
+####### To put into production into Heroku, just uncomment the first two lines and add heroku database entry to the dictionary above, (remember to change to default if needed) #######
+# db_from_env = dj_database_url.config(conn_max_age=600)
+# DATABASES['default'].update(db_from_env)
+# .    'heroku':{
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'dbj6ob6vcm9hjf',
+#         'HOST': 'ec2-34-242-154-118.eu-west-1.compute.amazonaws.com',
+#         'USER': 'hdeiletiowlwqw',
+#         'PASSWORD': 'b7fb77e269d63a80748bf0b88bb135431314e690e3f3d92732d7d442b9dc9da1',
+#         'PORT': '5432'
+#     }
 
 
 # Password validation
