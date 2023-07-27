@@ -1,0 +1,1 @@
+from .celery import celery   #we are not importing the library we are importing the celery instance within the celery.py file

@@ -194,3 +194,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
+
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379/1'  # the namespace is CELERY so this will be picked up, redis and the assigned socket, 1 refers to the database, this can be 1,2,3... so on
