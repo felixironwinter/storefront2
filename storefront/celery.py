@@ -1,5 +1,6 @@
 import os
 from celery import Celery
+# from storefront.celery import celery
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'storefront.settings')
 
