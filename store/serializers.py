@@ -1,13 +1,15 @@
 from decimal import Decimal
 from rest_framework import serializers
-from store.models import Product, Collection
+from store.models import Product, Collection, Review
 
 ### Serialisers are external fields that are shown within the response of an api call as you may want them to be different to the full model.
 
 class CollectionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Collection
-        fields = ['id', 'title'] 
+        fields = ['id', 'title','products_count']
+
+    products_count = serializers.IntegerField(read_only=True)
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
@@ -19,3 +21,11 @@ class ProductSerializer(serializers.ModelSerializer):
     def calculate_tax(self, product: Product):
         return product.unit_price * Decimal(1.1)
 
+class ReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Review
+        fields = ['id','date','name','description']
+
+    def create(self, validated_data):
+        product_id = self.context['product_id']
+        return Review.objects.create(product_id=product_id, **validated_data)
